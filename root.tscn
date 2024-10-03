@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://bp4ly56vlf187"]
+
+[ext_resource type="Script" path="res://background.gd" id="1_1pr85"]
+[ext_resource type="Script" path="res://player.gd" id="1_os662"]
+[ext_resource type="Texture2D" uid="uid://cakgomxnymjnv" path="res://doodles.jpg" id="2_j2hiy"]
+[ext_resource type="Texture2D" uid="uid://bhynhuw8ds4ei" path="res://run.gif" id="2_kjswu"]
+
+[node name="root" type="Node2D"]
+
+[node name="bg" type="Node2D" parent="."]
+script = ExtResource("1_1pr85")
+
+[node name="backgroundleft" type="Sprite2D" parent="bg"]
+position = Vector2(500, 250)
+texture = ExtResource("2_j2hiy")
+
+[node name="backgroundright" type="Sprite2D" parent="bg"]
+position = Vector2(1500, 250)
+texture = ExtResource("2_j2hiy")
+
+[node name="player" type="Node2D" parent="."]
+position = Vector2(100, 250)
+script = ExtResource("1_os662")
+
+[node name="player image" type="Sprite2D" parent="player"]
+scale = Vector2(0.420833, 0.195833)
+texture = ExtResource("2_kjswu")
+
+[node name="hitbox" type="Area2D" parent="player"]
+
+[node name="hitbox inner" type="CollisionPolygon2D" parent="player/hitbox"]
+polygon = PackedVector2Array(-48, -26, 9, -43, 51, -24, 43, 42, -50, 45, -78, 29, -74, 6)
+
+[node name="ui" type="Node2D" parent="."]
+
+[node name="instructions" type="Label" parent="ui"]
+offset_left = 6.0
+offset_top = 449.0
+offset_right = 530.0
+offset_bottom = 579.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 36
+text = "use w/up and s/down to move"
+
+[node name="instructions white" type="Label" parent="ui/instructions"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 3.0
+offset_right = 523.0
+offset_bottom = 133.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 36
+text = "use w/up and s/down to move"
