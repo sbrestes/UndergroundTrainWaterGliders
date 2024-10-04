@@ -1,6 +1,4 @@
 extends Node2D
-
-
 var up_down_move = 120
 var current_pos = 0
 var move_speed = 10

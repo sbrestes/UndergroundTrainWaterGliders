@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://bp4ly56vlf187"]
+[gd_scene load_steps=8 format=3 uid="uid://bp4ly56vlf187"]
 
 [ext_resource type="Script" path="res://background.gd" id="1_1pr85"]
 [ext_resource type="Script" path="res://player.gd" id="1_os662"]
+[ext_resource type="Texture2D" uid="uid://cdjcv1jjgridu" path="res://tester22.jpg" id="2_e2uk5"]
 [ext_resource type="Texture2D" uid="uid://cakgomxnymjnv" path="res://doodles.jpg" id="2_j2hiy"]
-[ext_resource type="Texture2D" uid="uid://bhynhuw8ds4ei" path="res://run.gif" id="2_kjswu"]
+[ext_resource type="Texture2D" uid="uid://4n8pq2rjye4s" path="res://car-removebg-preview.png" id="5_toqml"]
+[ext_resource type="Texture2D" uid="uid://qhjeqns786f7" path="res://joe4.jpg" id="6_71vy5"]
+[ext_resource type="Script" path="res://obstacle.gd" id="6_73ppp"]
 
 [node name="root" type="Node2D"]
 
@@ -11,11 +14,12 @@
 script = ExtResource("1_1pr85")
 
 [node name="backgroundleft" type="Sprite2D" parent="bg"]
-position = Vector2(500, 250)
-texture = ExtResource("2_j2hiy")
+position = Vector2(2259.15, 267)
+scale = Vector2(2.72692, 0.43437)
+texture = ExtResource("2_e2uk5")
 
 [node name="backgroundright" type="Sprite2D" parent="bg"]
-position = Vector2(1500, 250)
+position = Vector2(3029, -773)
 texture = ExtResource("2_j2hiy")
 
 [node name="player" type="Node2D" parent="."]
@@ -23,13 +27,17 @@ position = Vector2(100, 250)
 script = ExtResource("1_os662")
 
 [node name="player image" type="Sprite2D" parent="player"]
-scale = Vector2(0.420833, 0.195833)
-texture = ExtResource("2_kjswu")
+position = Vector2(28, 35)
+scale = Vector2(0.45199, 0.661972)
+texture = ExtResource("5_toqml")
 
 [node name="hitbox" type="Area2D" parent="player"]
+position = Vector2(-5, -6)
 
 [node name="hitbox inner" type="CollisionPolygon2D" parent="player/hitbox"]
-polygon = PackedVector2Array(-48, -26, 9, -43, 51, -24, 43, 42, -50, 45, -78, 29, -74, 6)
+position = Vector2(85, 61)
+scale = Vector2(1.14631, 1.25431)
+polygon = PackedVector2Array(-42.746, -54.2131, -4.36183, -36.6735, 29.6605, -33.4845, 15.7026, 15.945, -41.0012, 14.3505, -103.812, 17.5395, -110.791, -37.4708)
 
 [node name="ui" type="Node2D" parent="."]
 
@@ -51,3 +59,229 @@ offset_bottom = 133.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 36
 text = "use w/up and s/down to move"
+
+[node name="obstical" type="Node2D" parent="."]
+script = ExtResource("6_73ppp")
+
+[node name="Sprite2D" type="Sprite2D" parent="obstical"]
+position = Vector2(2529.7, 87.6251)
+scale = Vector2(3.56667, 2.15417)
+texture = ExtResource("6_71vy5")
+
+[node name="hitbox" type="Area2D" parent="obstical/Sprite2D"]
+position = Vector2(5.75757, -1.08598)
+
+[node name="hitbox inner" type="CollisionPolygon2D" parent="obstical/Sprite2D/hitbox"]
+position = Vector2(58.2811, 15.6524)
+scale = Vector2(1.14631, 1.25431)
+polygon = PackedVector2Array(-59.7439, -36.3633, -26.9641, -35.2811, -24.5848, -17.9652, -28.2858, 12.9869, -59.7439, 15.1513, -84.8575, 9.95659, -87.501, -34.4153)
+
+[node name="Sprite2D2" type="Sprite2D" parent="obstical"]
+position = Vector2(832, 266)
+scale = Vector2(2.65, 1.72084)
+texture = ExtResource("6_71vy5")
+
+[node name="hitbox" type="Area2D" parent="obstical/Sprite2D2"]
+position = Vector2(670.928, 117.461)
+
+[node name="hitbox inner" type="CollisionPolygon2D" parent="obstical/Sprite2D2/hitbox"]
+position = Vector2(-605.758, -109.907)
+scale = Vector2(1.14631, 1.25431)
+polygon = PackedVector2Array(-59.7439, -36.3633, -26.9641, -35.2811, -24.5848, -17.9652, -28.2858, 12.9869, -59.7439, 15.1513, -84.8575, 9.95659, -87.501, -34.4153)
+
+[node name="Sprite2D3" type="Sprite2D" parent="obstical"]
+position = Vector2(1418.13, 295.946)
+scale = Vector2(3.2368, 1.8269)
+texture = ExtResource("6_71vy5")
+
+[node name="hitbox" type="Area2D" parent="obstical/Sprite2D3"]
+position = Vector2(5.75757, -1.08598)
+
+[node name="hitbox inner" type="CollisionPolygon2D" parent="obstical/Sprite2D3/hitbox"]
+position = Vector2(59.4227, 13.001)
+scale = Vector2(1.14631, 1.25431)
+polygon = PackedVector2Array(-59.7439, -36.3633, -26.9641, -35.2811, -24.5848, -17.9652, -28.2858, 12.9869, -59.7439, 15.1513, -84.8575, 9.95659, -87.501, -34.4153)
+
+[node name="Sprite2D4" type="Sprite2D" parent="obstical"]
+position = Vector2(2041, 122)
+scale = Vector2(3.00443, 2.07841)
+texture = ExtResource("6_71vy5")
+
+[node name="hitbox" type="Area2D" parent="obstical/Sprite2D4"]
+position = Vector2(4.99251, -5.89734)
+
+[node name="hitbox inner" type="CollisionPolygon2D" parent="obstical/Sprite2D4/hitbox"]
+position = Vector2(59.4347, 16.8663)
+scale = Vector2(1.14631, 1.25431)
+polygon = PackedVector2Array(-59.7439, -36.3633, -26.9641, -35.2811, -24.5848, -17.9652, -28.2858, 12.9869, -59.7439, 15.1513, -84.8575, 9.95659, -87.501, -34.4153)
+
+[node name="Sprite2D5" type="Sprite2D" parent="obstical"]
+position = Vector2(824.133, 108.352)
+scale = Vector2(3.00443, 2.07841)
+texture = ExtResource("6_71vy5")
+
+[node name="hitbox" type="Area2D" parent="obstical/Sprite2D5"]
+position = Vector2(5.75757, -1.08598)
+
+[node name="hitbox inner" type="CollisionPolygon2D" parent="obstical/Sprite2D5/hitbox"]
+position = Vector2(59.4347, 16.8663)
+scale = Vector2(1.14631, 1.25431)
+polygon = PackedVector2Array(-59.7439, -36.3633, -26.9641, -35.2811, -24.5848, -17.9652, -28.2858, 12.9869, -59.7439, 15.1513, -84.8575, 9.95659, -87.501, -34.4153)
+
+[node name="Sprite2D6" type="Sprite2D" parent="obstical"]
+position = Vector2(824.133, 108.352)
+scale = Vector2(3.00443, 2.07841)
+texture = ExtResource("6_71vy5")
+
+[node name="hitbox" type="Area2D" parent="obstical/Sprite2D6"]
+position = Vector2(5.75757, -1.08598)
+
+[node name="hitbox inner" type="CollisionPolygon2D" parent="obstical/Sprite2D6/hitbox"]
+position = Vector2(59.4347, 16.8663)
+scale = Vector2(1.14631, 1.25431)
+polygon = PackedVector2Array(-59.7439, -36.3633, -26.9641, -35.2811, -24.5848, -17.9652, -28.2858, 12.9869, -59.7439, 15.1513, -84.8575, 9.95659, -87.501, -34.4153)
+
+[node name="Sprite2D7" type="Sprite2D" parent="obstical"]
+position = Vector2(1410.13, 433.946)
+scale = Vector2(3.00443, 2.07841)
+texture = ExtResource("6_71vy5")
+
+[node name="hitbox" type="Area2D" parent="obstical/Sprite2D7"]
+position = Vector2(5.75757, -1.08598)
+
+[node name="hitbox inner" type="CollisionPolygon2D" parent="obstical/Sprite2D7/hitbox"]
+position = Vector2(59.4347, 16.8663)
+scale = Vector2(1.14631, 1.25431)
+polygon = PackedVector2Array(-59.7439, -36.3633, -26.9641, -35.2811, -24.5848, -17.9652, -28.2858, 12.9869, -59.7439, 15.1513, -84.8575, 9.95659, -87.501, -34.4153)
+
+[node name="Sprite2D8" type="Sprite2D" parent="obstical"]
+position = Vector2(2048, 438)
+scale = Vector2(3.57051, 2.10003)
+texture = ExtResource("6_71vy5")
+
+[node name="hitbox" type="Area2D" parent="obstical/Sprite2D8"]
+position = Vector2(5.1138, -5.84781)
+
+[node name="hitbox inner" type="CollisionPolygon2D" parent="obstical/Sprite2D8/hitbox"]
+position = Vector2(51.9051, 14.4187)
+scale = Vector2(1.03658, 1.09312)
+polygon = PackedVector2Array(-57.5499, -43.1262, -28.3697, -43.1262, -24.5848, -17.9652, -24.587, 21.3453, -59.7114, 21.3453, -86.7302, 18.7316, -88.3513, -43.1262)
+
+[node name="Sprite2D9" type="Sprite2D" parent="obstical"]
+position = Vector2(2552.14, 297.952)
+rotation = 3.14159
+scale = Vector2(3.28282, -2.48513)
+texture = ExtResource("6_71vy5")
+
+[node name="hitbox" type="Area2D" parent="obstical/Sprite2D9"]
+position = Vector2(17.9437, -3.7837)
+
+[node name="hitbox inner" type="CollisionPolygon2D" parent="obstical/Sprite2D9/hitbox"]
+position = Vector2(47.6501, 16.9783)
+scale = Vector2(1.14631, 1.25431)
+polygon = PackedVector2Array(-59.7439, -36.3633, -26.9641, -35.2811, -24.5848, -17.9652, -28.2858, 12.9869, -59.7439, 15.1513, -84.8575, 9.95659, -87.501, -34.4153)
+
+[node name="Sprite2D10" type="Sprite2D" parent="obstical"]
+position = Vector2(3059, 120)
+scale = Vector2(3.43289, 2.47586)
+texture = ExtResource("6_71vy5")
+
+[node name="hitbox" type="Area2D" parent="obstical/Sprite2D10"]
+position = Vector2(5.75757, -1.08598)
+
+[node name="hitbox inner" type="CollisionPolygon2D" parent="obstical/Sprite2D10/hitbox"]
+position = Vector2(57.8327, 18.0498)
+scale = Vector2(1.14631, 1.25431)
+polygon = PackedVector2Array(-59.7439, -36.3633, -26.9641, -35.2811, -24.5848, -17.9652, -28.2858, 12.9869, -59.7439, 15.1513, -84.8575, 9.95659, -87.501, -34.4153)
+
+[node name="Sprite2D11" type="Sprite2D" parent="obstical"]
+position = Vector2(4116, 109)
+scale = Vector2(4.78912, 2.6879)
+texture = ExtResource("6_71vy5")
+
+[node name="hitbox" type="Area2D" parent="obstical/Sprite2D11"]
+position = Vector2(5.75757, -1.08598)
+
+[node name="hitbox inner" type="CollisionPolygon2D" parent="obstical/Sprite2D11/hitbox"]
+position = Vector2(58.2811, 15.6524)
+scale = Vector2(1.14631, 1.25431)
+polygon = PackedVector2Array(-59.7439, -36.3633, -26.9641, -35.2811, -24.5848, -17.9652, -28.2858, 12.9869, -59.7439, 15.1513, -84.8575, 9.95659, -87.501, -34.4153)
+
+[node name="Sprite2D12" type="Sprite2D" parent="obstical"]
+position = Vector2(3834, 271)
+scale = Vector2(3.56667, 2.15417)
+texture = ExtResource("6_71vy5")
+
+[node name="hitbox" type="Area2D" parent="obstical/Sprite2D12"]
+position = Vector2(5.75757, -1.08598)
+
+[node name="hitbox inner" type="CollisionPolygon2D" parent="obstical/Sprite2D12/hitbox"]
+position = Vector2(59.9159, 13.0377)
+scale = Vector2(1.14631, 1.25431)
+polygon = PackedVector2Array(-59.7439, -36.3633, -26.9641, -35.2811, -24.5848, -17.9652, -28.2858, 12.9869, -59.7439, 15.1513, -84.8575, 9.95659, -87.501, -34.4153)
+
+[node name="Sprite2D13" type="Sprite2D" parent="obstical"]
+position = Vector2(3550, 278)
+scale = Vector2(3.56667, 2.15417)
+texture = ExtResource("6_71vy5")
+
+[node name="hitbox" type="Area2D" parent="obstical/Sprite2D13"]
+position = Vector2(5.75757, -1.08598)
+
+[node name="hitbox inner" type="CollisionPolygon2D" parent="obstical/Sprite2D13/hitbox"]
+position = Vector2(58.2811, 15.6524)
+scale = Vector2(1.14631, 1.25431)
+polygon = PackedVector2Array(-59.7439, -36.3633, -26.9641, -35.2811, -24.5848, -17.9652, -28.2858, 12.9869, -59.7439, 15.1513, -84.8575, 9.95659, -87.501, -34.4153)
+
+[node name="Sprite2D14" type="Sprite2D" parent="obstical"]
+position = Vector2(4741, 269)
+scale = Vector2(3.56667, 2.15417)
+texture = ExtResource("6_71vy5")
+
+[node name="hitbox" type="Area2D" parent="obstical/Sprite2D14"]
+position = Vector2(5.75757, -1.08598)
+
+[node name="hitbox inner" type="CollisionPolygon2D" parent="obstical/Sprite2D14/hitbox"]
+position = Vector2(58.2811, 15.6524)
+scale = Vector2(1.14631, 1.25431)
+polygon = PackedVector2Array(-59.7439, -36.3633, -26.9641, -35.2811, -24.5848, -17.9652, -28.2858, 12.9869, -59.7439, 15.1513, -84.8575, 9.95659, -87.501, -34.4153)
+
+[node name="Sprite2D15" type="Sprite2D" parent="obstical"]
+position = Vector2(4488, 433)
+rotation = 3.14159
+scale = Vector2(4.29613, 1.88479)
+texture = ExtResource("6_71vy5")
+
+[node name="hitbox" type="Area2D" parent="obstical/Sprite2D15"]
+position = Vector2(5.75757, -1.08598)
+
+[node name="hitbox inner" type="CollisionPolygon2D" parent="obstical/Sprite2D15/hitbox"]
+position = Vector2(92.005, 2.67765)
+scale = Vector2(1.68142, 1.61242)
+polygon = PackedVector2Array(-59.8041, -24.3494, -38.3466, -24.3494, -39.1772, 2.63237, -40.0079, 18.4266, -60.2194, 20.0718, -77.5239, 17.7685, -78.0776, -21.388)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2529.7, 87.6251)
+scale = Vector2(3.56667, 2.15417)
+texture = ExtResource("6_71vy5")
+
+[node name="hitbox" type="Area2D" parent="Sprite2D"]
+position = Vector2(5.75757, -1.08598)
+
+[node name="hitbox inner" type="CollisionPolygon2D" parent="Sprite2D/hitbox"]
+position = Vector2(58.2811, 15.6524)
+scale = Vector2(1.14631, 1.25431)
+polygon = PackedVector2Array(-59.7439, -36.3633, -26.9641, -35.2811, -24.5848, -17.9652, -28.2858, 12.9869, -59.7439, 15.1513, -84.8575, 9.95659, -87.501, -34.4153)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(3058, 440)
+scale = Vector2(3.31418, 2.00521)
+texture = ExtResource("6_71vy5")
+
+[node name="hitbox" type="Area2D" parent="Sprite2D2"]
+position = Vector2(10.1306, 12.8883)
+
+[node name="hitbox inner" type="CollisionPolygon2D" parent="Sprite2D2/hitbox"]
+position = Vector2(53.8369, -0.919493)
+scale = Vector2(1.14631, 1.25431)
+polygon = PackedVector2Array(-59.7439, -36.3633, -26.9641, -35.2811, -24.5848, -17.9652, -28.2858, 12.9869, -59.7439, 15.1513, -84.8575, 9.95659, -87.501, -34.4153)
